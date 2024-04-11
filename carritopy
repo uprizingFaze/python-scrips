@@ -1,0 +1,20 @@
+from machine import Pin as pin
+from utime import sleep as pausa, sleep_ms as pausem, sleep_us as pausau
+F = pin(15,pin.OUT)
+
+A = pin(5,pin.IN, pin.PULL_DOWN)
+B = pin(18,pin.IN, pin.PULL_DOWN)
+C = pin(19,pin.IN, pin.PULL_DOWN)
+D = pin(21,pin.IN, pin.PULL_DOWN)
+E = pin(22,pin.IN, pin.PULL_DOWN)
+
+while True:
+  BA=A.value()
+  BB=B.value()
+  BC=C.value()
+  BD=D.value()
+  BE=E.value()
+  print(BA,BB,BC,BD,BE)
+  l=(BA and BB) and (BC and BD) and BE
+  F.value(l)
+  print (l)
