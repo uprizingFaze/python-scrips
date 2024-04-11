@@ -6,7 +6,7 @@ import utime
 
 #--------------------------- [Token de telegram ]---------------------------------------
 
-TOKEN = '5762374722:AAFd3FNlq4YV3FBbmAhyfc918U5s6APZpE0'
+TOKEN = ''
 #--------------------------- [OBJETOS]---------------------------------------
 
 bot = Bot(TOKEN)
@@ -16,7 +16,7 @@ led  = Pin(2, Pin.OUT)
 
 def conectaWifi (red, password):
       global miRed
-      miRed = network.WLAN(network.STA_IF)     
+      miRed = network.WLAN(network.STA_IF)
       if not miRed.isconnected():              #Si no está conectado…
           miRed.active(True)                   #activa la interface
           miRed.connect(red, password)         #Intenta conectar con la red
@@ -49,7 +49,7 @@ if conectaWifi ("iPhone de uprizing", "12345678"):
         led.value(0)
         update.reply("apagado \U0001F636")
 
-    
+
 
 
     bot.start_loop()
